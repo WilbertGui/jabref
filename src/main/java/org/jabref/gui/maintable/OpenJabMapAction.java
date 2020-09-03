@@ -1,13 +1,8 @@
 package org.jabref.gui.maintable;
 
-import org.jabref.Globals;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.StateManager;
-import org.jabref.gui.actions.ActionHelper;
 import org.jabref.gui.actions.SimpleCommand;
-import org.jabref.gui.externalfiletype.ExternalFileTypes;
-import org.jabref.gui.fieldeditors.LinkedFileViewModel;
-import org.jabref.preferences.PreferencesService;
 
 import java.io.File;
 import java.io.IOException;
