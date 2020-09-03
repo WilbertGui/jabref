@@ -521,6 +521,12 @@ public class JabRefFrame extends BorderPane {
                         factory.createIconButton(StandardActions.OPEN_LIBRARY, new OpenDatabaseAction(this)),
                         factory.createIconButton(StandardActions.SAVE_LIBRARY, new SaveAction(SaveAction.SaveMethod.SAVE, this, stateManager))),
 
+                new Separator(Orientation.VERTICAL),
+                new HBox(
+                factory.createIconButton(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService,stateManager))),
+
+
+
                 leftSpacer,
 
                 globalSearchBar,
