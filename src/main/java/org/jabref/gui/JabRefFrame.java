@@ -38,11 +38,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.control.skin.TabPaneSkin;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -522,10 +518,10 @@ public class JabRefFrame extends BorderPane {
                         factory.createIconButton(StandardActions.SAVE_LIBRARY, new SaveAction(SaveAction.SaveMethod.SAVE, this, stateManager))),
 
                 new Separator(Orientation.VERTICAL),
+
                 new HBox(
-                factory.createIconButton(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService,stateManager))),
-
-
+                        factory.createIconButton(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService,stateManager, splitPane))
+                ),
 
                 leftSpacer,
 
@@ -880,7 +876,7 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.SEND_AS_EMAIL, new SendAsEMailAction(dialogService, stateManager)),
 
                 new SeparatorMenuItem(),
-                factory.createMenuItem(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService, stateManager)),
+                factory.createMenuItem(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService, stateManager, splitPane)),
                 pushToApplicationMenuItem
         );
 
