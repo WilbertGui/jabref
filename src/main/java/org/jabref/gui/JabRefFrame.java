@@ -520,7 +520,7 @@ public class JabRefFrame extends BorderPane {
                 new Separator(Orientation.VERTICAL),
 
                 new HBox(
-                        factory.createIconButton(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService,stateManager, splitPane))
+                        factory.createIconButton(StandardActions.OPEN_JABMAP, new OpenJabMapAction(this,stateManager, splitPane))
                 ),
 
                 leftSpacer,
@@ -876,7 +876,7 @@ public class JabRefFrame extends BorderPane {
                 factory.createMenuItem(StandardActions.SEND_AS_EMAIL, new SendAsEMailAction(dialogService, stateManager)),
 
                 new SeparatorMenuItem(),
-                factory.createMenuItem(StandardActions.OPEN_JABMAP, new OpenJabMapAction(dialogService, stateManager, splitPane)),
+                factory.createMenuItem(StandardActions.OPEN_JABMAP, new OpenJabMapAction(this, stateManager, splitPane)),
                 pushToApplicationMenuItem
         );
 
@@ -1337,6 +1337,12 @@ public class JabRefFrame extends BorderPane {
 
     public DialogService getDialogService() {
         return dialogService;
+    }
+
+    public void restoreAfterJabMapClosed() {
+        splitPane.getItems().addAll(sidePane, tabbedPane);
+        SplitPane.setResizableWithParent(sidePane, false);
+        setDividerPosition();
     }
 
     /**
