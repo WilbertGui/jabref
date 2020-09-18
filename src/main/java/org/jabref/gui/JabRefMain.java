@@ -1,4 +1,5 @@
 package org.jabref.gui;
+
 import java.net.Authenticator;
 
 import javafx.application.Application;
