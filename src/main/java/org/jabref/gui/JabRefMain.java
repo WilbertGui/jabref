@@ -1,10 +1,11 @@
 package org.jabref.gui;
+import java.net.Authenticator;
 
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import org.apache.commons.cli.ParseException;
+
 import org.jabref.cli.ArgumentProcessor;
 import org.jabref.cli.JabRefCLI;
 import org.jabref.gui.remote.JabRefMessageHandler;
@@ -23,10 +24,10 @@ import org.jabref.logic.util.OS;
 import org.jabref.migrations.PreferencesMigrations;
 import org.jabref.model.database.BibDatabaseMode;
 import org.jabref.preferences.JabRefPreferences;
+
+import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.net.Authenticator;
 
 /**
  * JabRef's main class to process command line options and to start the UI
